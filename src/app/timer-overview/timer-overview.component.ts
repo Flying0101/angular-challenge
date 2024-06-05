@@ -31,7 +31,7 @@ export class TimerOverviewComponent {
       if (this.intervalId) {
         clearInterval(this.intervalId)
       }
-      this.countdown = '0d 0h 0m 0s'
+      this.countdown = 'error: wrong date format'
       localStorage.setItem('countdown', this.countdown)
       return
     }
@@ -43,7 +43,7 @@ export class TimerOverviewComponent {
       if (this.intervalId) {
         clearInterval(this.intervalId)
       }
-      this.countdown = '0d 0h 0m 0s'
+      this.countdown = 'error: double check your date'
       localStorage.setItem('countdown', this.countdown)
       return
     }
@@ -58,7 +58,7 @@ export class TimerOverviewComponent {
 
       if (distance < 0) {
         clearInterval(this.intervalId)
-        this.countdown = '0d 0h 0m 0s'
+        this.countdown = 'error: date is in the past'
         return
       }
 
@@ -84,7 +84,7 @@ export class TimerOverviewComponent {
         (distance % (MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE)) / MILLISECONDS_PER_SECOND,
       )
 
-      this.countdown = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`
+      this.countdown = `${days} d, ${hours} h, ${minutes}m, ${seconds}s`
       localStorage.setItem('countdown', this.countdown)
     }, 1000)
   }
