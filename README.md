@@ -1,30 +1,38 @@
-# Description & requirements
+# Project Setup
 
-Your objective in this assignment is to create a countdown app built using this boilerplate (+ any other tools of your choice) that follows the design specifications provided [in this Figma file](https://www.figma.com/file/UPEugUz5jM9IzIkWft2Y9m/NC-challenge). The app should work in portrait as well as in landscape mode while the text displayed on the screen should always fill the whole width of the screen.
+Before you begin, ensure you have the following installed on your machine:
 
-In your app, it should be possible to define the end date and the name of the event taking place on that day. The countdown should always start from the current time and it should display the time remaining to your specified end date in the following format: Days, Hours(h), Minutes(m), Seconds(s) *(e.g., 3 days, 15 h, 20 m, 5 s)*. To make sure the text always covers the entire screen width, it should resize whenever necessary to achieve this objective.
+Node.js: Download and install Node.js from `https://nodejs.org/en`.
 
-The purpose of the solution is to “fit” the input text into an element in one line (no line breaks, filling the whole width) using the maximum possible font-size.
+npm: npm is included with Node.js, so it should be installed automatically.
 
-Please make sure that your text fit solution is reusable and that the event name, as well as the specified end date, are persisted between page reloads.
+# Installation
 
-**Once you feel ready to share your solution, please:**
+Clone the repository
 
-- Commit the code to Github or your favorite VCS.
-- Write a simple README.md explaining how to set up the project (assuming it’s read by a developer who is experienced with all the used tools).
-- Include a URL to a deployed working Web page (use netlify.com or github.io or whatever simple hosting tool that works for you).
+Install dependencies with `npm i`
 
-Please put the resulting project in a public github repository and provide a link to it. Please make it easy for us to test the result.
-
-## Optional goals
-
-You’re free to complete this additional goal to get a higher score if you want!
-
-1. Write suggestions of how this solution can be improved. Describe what the next steps would be in order for this app to be production ready. 
+Install Angular CLI with `npm install -g @angular/cli`
 
 ## Running the app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
+Run `npm run start` or `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
+
+
+## Suggestions for production
+
+Unit Tests:
+Ensure comprehensive unit tests are written and passing.
+
+Edge Cases:
+Test the application for further edge cases and unexpected user behavior.
+Ensure that all user inputs are validated and handled gracefully.
+
+Date Selection:
+Consider enhancing the user experience by adding a date picker component for date selection.
+
+Documentation: 
+Keep the code well-documented to help other developers understand the functionality.
 
 ## Further help
 
