@@ -38,9 +38,8 @@ export class TimerOverviewComponent {
 
     const dateParts = newDate.split('-').map(part => parseInt(part, 10))
     const endDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
-    const todayDate = new Date()
 
-    if (endDate < todayDate) {
+    if (isNaN(endDate.getTime()) || dateParts[2] > 31 || dateParts[1] > 12) {
       if (this.intervalId) {
         clearInterval(this.intervalId)
       }
