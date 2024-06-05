@@ -31,7 +31,7 @@ export class TimerOverviewComponent {
       if (this.intervalId) {
         clearInterval(this.intervalId)
       }
-      this.countdown = 'error: wrong date format'
+      this.countdown = 'error: empty or invalid date format'
       localStorage.setItem('countdown', this.countdown)
       return
     }
