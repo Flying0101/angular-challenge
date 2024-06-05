@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core'
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-input',
@@ -8,7 +8,6 @@ import { Component, EventEmitter, Output } from '@angular/core'
 })
 export class InputComponent {
   inputEventTitle = ''
-
   @Output() inputEventTitleChange = new EventEmitter<string>()
 
   onInputEventTitleChange(event: Event): void {
@@ -20,9 +19,25 @@ export class InputComponent {
   dateInput = ''
   @Output() dateInputChange = new EventEmitter<string>()
 
+  @ViewChild('dateInputField') dateInputField!: ElementRef
+
   onDateInputChange(event: Event): void {
     const target = event.target as HTMLInputElement
-    this.dateInput = target.value
+    let inputValue = target.value
+
+    if (this.dateInput.length > inputValue.length) {
+      this.dateInput = inputValue
+      this.dateInputChange.emit(this.dateInput)
+      this.dateInputField.nativeElement.value = this.dateInput
+      return
+    }
+
+    if (inputValue.length === 4 || inputValue.length === 7) {
+      inputValue += '-'
+    }
+
+    this.dateInput = inputValue
     this.dateInputChange.emit(this.dateInput)
+    this.dateInputField.nativeElement.value = this.dateInput
   }
 }

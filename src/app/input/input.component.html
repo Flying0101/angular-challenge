@@ -5,6 +5,6 @@
     </div>
     <div>
         <label>Date</label>
-        <input (change)="onDateInputChange($event)" class="event-date-input" placeholder="xxxx-xx-xx" />
+        <input #dateInputField (input)="onDateInputChange($event)" (change)="onDateInputChange($event)" class="event-date-input" placeholder="xxxx-xx-xx" />
     </div>
 </div>
