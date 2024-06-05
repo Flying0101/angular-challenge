@@ -1,0 +1,29 @@
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container div {
+  position: relative;
+  margin: 0 10px;
+  width: 100%;
+}
+.event-date-input {
+  position: relative;
+  width: 100%;
+  padding: 0.9rem 0.5rem;
+  border: 1px solid #757575;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+}
+
+.input-container label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: #fff;
+  padding: 0 5px;
+  z-index: 1;
+}
